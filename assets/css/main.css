@@ -875,18 +875,98 @@ main {
   z-index: 1;
 }
 
+.year-count {
+  font-size: 0.875rem;
+  vertical-align: super;
+  margin-left: 0.125rem;
+  opacity: 0.9;
+}
+
 .year-line {
   flex: 1;
   height: 2px;
   margin-left: var(--spacing-md);
   background: linear-gradient(to right, var(--accent-primary), transparent);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.year-count-inline {
+  position: absolute;
+  left: 20%;
+  background-color: var(--bg-primary);
+  padding: 0 var(--spacing-sm);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+  transform: translateY(-50%);
+  top: 50%;
 }
 
 .year-posts {
   margin-left: calc(4rem + var(--spacing-md));
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.year-months {
+  margin-left: 0;
+  margin-top: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
   gap: var(--spacing-lg);
+}
+
+.month-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.month-indicator {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.month-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  margin-right: var(--spacing-sm);
+}
+
+.month-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--accent-primary), transparent);
+  position: relative;
+  display: flex;
+  align-items: center;
+  opacity: 0.7;
+}
+
+.month-count-inline {
+  position: absolute;
+  left: 20%;
+  background-color: var(--bg-primary);
+  padding: 0 var(--spacing-sm);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+.month-posts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
 }
 
 .tag-post-card {
