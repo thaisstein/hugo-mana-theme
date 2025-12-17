@@ -1821,6 +1821,12 @@ main {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .header-logo .logo-link {
+    font-size: 1.125rem;
+  }
+}
+
 @media (max-width: 768px) {
   .header-container {
     padding: 0 var(--spacing-sm);
@@ -1836,7 +1842,7 @@ main {
   }
 
   .header-logo .logo-link {
-    font-size: 1rem;
+    font-size: 0.875rem;
     max-width: 100%;
   }
 
@@ -1923,7 +1929,7 @@ main {
   }
 
   .header-logo .logo-link {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     max-width: 100%;
   }
 
