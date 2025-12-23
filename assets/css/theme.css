@@ -14,9 +14,10 @@ html {
 :root {
   /* Nebula Glass Color Palette */
   --bg-deep: #020617; /* Deep Midnight Blue */
-  --accent-primary: #A020F0; /* Electric Purple */
+  --accent-primary: #B063E0; /* Primary Purple */
+  --accent-mid-purple: #C485F6; /* Mid Purple */
+  --accent-light-purple: #DBABFF; /* Light Purple */
   --accent-secondary: #00FFFF; /* Cyber Cyan */
-  --accent-light-purple: #c084fc; /* Light Purple */
   --glass-surface: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
   
@@ -27,7 +28,7 @@ html {
   --text-primary: #f1f5f9;
   --text-secondary: #cbd5e1;
   --text-muted: #94a3b8;
-  --accent-hover: #c084fc;
+  --accent-hover: #C485F6;
   --border-color: var(--glass-border);
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
@@ -64,9 +65,11 @@ html {
   --text-primary: #0f172a;
   --text-secondary: #475569;
   --text-muted: #64748b;
-  --accent-primary: #9333ea;
+  --accent-primary: #B063E0;
+  --accent-mid-purple: #C485F6;
+  --accent-light-purple: #DBABFF;
   --accent-secondary: #7e22ce;
-  --accent-hover: #a855f7;
+  --accent-hover: #C485F6;
   --border-color: #e2e8f0;
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
