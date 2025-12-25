@@ -209,6 +209,40 @@
   });
 })();
 
+// Glass Dock Navigation - Mobile Toggle
+(function() {
+  const glassDockToggle = document.querySelector('.glass-dock-toggle');
+  const glassDockList = document.querySelector('.glass-dock-list');
+  
+  if (glassDockToggle && glassDockList) {
+    glassDockToggle.addEventListener('click', function() {
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isExpanded);
+      glassDockList.classList.toggle('mobile-open', !isExpanded);
+    });
+    
+    // Close menu when clicking on a link (mobile)
+    glassDockList.querySelectorAll('.glass-dock-link').forEach(link => {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+          glassDockToggle.setAttribute('aria-expanded', 'false');
+          glassDockList.classList.remove('mobile-open');
+        }
+      });
+    });
+    
+    // Close menu when clicking outside (mobile)
+    document.addEventListener('click', function(e) {
+      if (window.innerWidth <= 768) {
+        if (!glassDockToggle.contains(e.target) && !glassDockList.contains(e.target)) {
+          glassDockToggle.setAttribute('aria-expanded', 'false');
+          glassDockList.classList.remove('mobile-open');
+        }
+      }
+    });
+  }
+})();
+
 // Smooth scroll for anchor links
 (function() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -1,27 +1,32 @@
 {{ define "main" }}
-<div class="home-container">
-  <!-- Mini About Section -->
-  {{ if site.Params.avatar.url }}
-  <section class="mini-about">
-    <div class="about-content">
-      <img src="{{ site.Params.avatar.url }}" alt="{{ site.Title }}" class="about-avatar">
-      
-      <div class="about-info">
-        <h1 class="about-name">{{ site.Title }}</h1>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            <span class="hero-title-line1">MANA'S GUIDE</span>
+            <span class="hero-title-line2">TO EVERYTHING</span>
+          </h1>
         {{ if site.Params.description }}
-        <p class="about-description">{{ site.Params.description }}</p>
+          <p class="hero-subtitle">&gt; {{ site.Params.description }}</p>
+          {{ else if site.Description }}
+          <p class="hero-subtitle">&gt; {{ site.Description }}</p>
         {{ end }}
-        
         {{ if site.Params.social }}
-        <div class="about-social">
+          <div class="hero-social">
           {{ partial "social-links.html" . }}
         </div>
         {{ end }}
+        </div>
+        <div class="hero-image">
+          <img src="/favicon/logo-transparent/android-chrome-512x512.png" alt="{{ site.Title }}" class="hero-logo">
+        </div>
       </div>
     </div>
   </section>
-  {{ end }}
 
+<div class="home-container">
   <!-- Posts List -->
   <section class="posts-section">
     <h2 class="posts-title">Recent Posts</h2>

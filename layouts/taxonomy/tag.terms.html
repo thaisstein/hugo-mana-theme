@@ -1,6 +1,8 @@
 {{ define "main" }}
 <div class="tags-page">
-  <h1 class="tags-title">{{ .Title }}</h1>
+  <h1 class="tags-title">
+    <span class="list-title-line2">{{ .Title | upper }}</span>
+  </h1>
   
   <!-- Help text -->
   <div class="tags-help">
