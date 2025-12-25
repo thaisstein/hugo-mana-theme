@@ -1992,7 +1992,7 @@ main {
 
 .search-results {
   margin-top: 0.5rem;
-  max-height: 400px;
+  max-height: 65vh;
   overflow-y: auto;
   background: rgba(30, 30, 45, 0.85);
   backdrop-filter: blur(12px);
@@ -2180,7 +2180,7 @@ main {
 
 @media (max-width: 768px) {
   .search-modal {
-    padding-top: 15vh;
+    padding-top: 8vh;
   }
 
   .search-modal-container {
@@ -2190,6 +2190,10 @@ main {
   .search-input {
     font-size: 1.1rem;
     height: 56px;
+  }
+
+  .search-results {
+    max-height: 60vh;
   }
 
   .header-container {
