@@ -149,8 +149,22 @@
   // Highlight matching text
   function highlightMatch(text, query) {
     if (!text || !query) return text;
-    const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-    return text.replace(regex, '<mark>$1</mark>');
+    
+    // Check if query ends with a space
+    const hasTrailingSpace = query.endsWith(' ');
+    const trimmedQuery = query.trim();
+    if (!trimmedQuery) return text;
+    
+    // Escape special regex characters
+    const escapedQuery = trimmedQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    
+    // Match the query (without trailing space for matching)
+    const regex = new RegExp(`(${escapedQuery})`, 'gi');
+    
+    return text.replace(regex, (match) => {
+      // If query had trailing space, add it to the mark content
+      return hasTrailingSpace ? `<mark>${match} </mark>` : `<mark>${match}</mark>`;
+    });
   }
   
   // Show/hide clear button based on input value

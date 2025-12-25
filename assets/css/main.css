@@ -2037,7 +2037,7 @@ main {
 .search-result-title mark {
   background-color: rgba(160, 32, 240, 0.3);
   color: rgba(255, 255, 255, 1);
-  padding: 0.125rem 0 0.125rem 0.25rem;
+  padding: 0.125rem 0 0.125rem 0;
   border-radius: 0.125rem;
   font-weight: 700;
   display: inline-block;
@@ -2054,7 +2054,7 @@ main {
 .search-result-summary mark {
   background-color: rgba(160, 32, 240, 0.2);
   color: rgba(255, 255, 255, 0.9);
-  padding: 0.125rem 0 0.125rem 0.25rem;
+  padding: 0.125rem 0 0.125rem 0;
   border-radius: 0.125rem;
   display: inline-block;
   vertical-align: baseline;
