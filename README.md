@@ -82,6 +82,10 @@ Add the following configuration to your `hugo.toml` file:
   description = "Your site description"
   favicon = "/favicon/favicon.ico"
   footerText = "Built with Hugo and Mana theme"  # Optional
+  
+  # Hero section title (optional - defaults to site.Title)
+  heroTitleLine1 = "Your Site Name"  # First line of hero title
+  heroTitleLine2 = "Your Tagline"    # Second line of hero title (optional)
 ```
 
 ### Avatar

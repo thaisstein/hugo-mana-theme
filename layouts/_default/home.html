@@ -5,8 +5,14 @@
       <div class="hero-content">
         <div class="hero-text">
           <h1 class="hero-title">
-            <span class="hero-title-line1">MANA'S GUIDE</span>
-            <span class="hero-title-line2">TO EVERYTHING</span>
+            {{ if site.Params.heroTitleLine1 }}
+              <span class="hero-title-line1">{{ site.Params.heroTitleLine1 }}</span>
+            {{ else }}
+              <span class="hero-title-line1">{{ site.Title }}</span>
+            {{ end }}
+            {{ if site.Params.heroTitleLine2 }}
+              <span class="hero-title-line2">{{ site.Params.heroTitleLine2 }}</span>
+            {{ end }}
           </h1>
         {{ if site.Params.description }}
           <p class="hero-subtitle">&gt; {{ site.Params.description }}</p>
