@@ -12,7 +12,8 @@ A custom Hugo theme inspired by PaperModX and Blowfish, featuring a dark theme b
 - Buy Me a Coffee widget
 - Clean, minimal design
 - Responsive layout
-- Code highlighting with Chroma
+- Code highlighting with Chroma (Catppuccin themes by default)
+- Theme-aware syntax highlighting (switches automatically with theme toggle)
 - Table of Contents support
 
 ## Installation
@@ -115,6 +116,42 @@ Enable table of contents for posts:
     endLevel = 6
     ordered = false
 ```
+
+### Code Syntax Highlighting
+
+The theme supports theme-aware syntax highlighting using Chroma. By default, it uses Catppuccin themes:
+- **Dark mode**: `catppuccin-macchiato`
+- **Light mode**: `catppuccin-frappe`
+
+Configure the themes in your `hugo.toml`:
+
+```toml
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    noClasses = false
+    style = "catppuccin-macchiato"  # Default style
+
+[params]
+  [params.codeHighlight]
+    darkTheme = "catppuccin-macchiato"   # Theme for dark mode
+    lightTheme = "catppuccin-frappe"     # Theme for light mode
+```
+
+#### Generating Syntax Highlighting CSS
+
+To generate the CSS files for syntax highlighting, run these commands in your project root:
+
+```bash
+# Generate dark theme CSS
+hugo gen chromastyles --style=catppuccin-macchiato > themes/mana/assets/css/syntax-dark.css
+
+# Generate light theme CSS
+hugo gen chromastyles --style=catppuccin-frappe > themes/mana/assets/css/syntax-light.css
+```
+
+**Note**: These CSS files are already included in the theme. You only need to regenerate them if you want to use different Chroma styles. You can use any valid Chroma style name (e.g., `github`, `monokai`, `dracula`, etc.).
 
 ### Search Index
 

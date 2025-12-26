@@ -1,6 +1,8 @@
 {{ $themeCss := resources.Get "css/theme.css" }}
 <link rel="stylesheet" href="{{ $themeCss.RelPermalink }}">
 
+{{ partial "head/syntax-highlight.html" . }}
+
 {{ $cssFiles := slice
   (resources.Get "css/base.css")
   (resources.Get "css/main.css")
