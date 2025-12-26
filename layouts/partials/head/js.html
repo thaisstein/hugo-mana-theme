@@ -8,5 +8,5 @@
 {{ $filters := resources.Get "js/filters.js" }}
 {{ $codeBlocks := resources.Get "js/code-blocks.js" }}
 {{ $js := slice $constants $utils $themeToggle $search $scrollToTop $navigation $toc $filters $codeBlocks | resources.Concat "js/main.js" | minify | fingerprint }}
-<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+<script src="{{ $js.RelPermalink }}" defer></script>
 
