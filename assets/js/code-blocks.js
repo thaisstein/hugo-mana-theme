@@ -38,8 +38,11 @@ function initCollapsibleCodeBlocks() {
       copyButton.className = 'code-block-copy';
       copyButton.setAttribute('aria-label', 'Copy code');
       copyButton.innerHTML = `
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+        </svg>
+        <svg class="checkmark-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
         </svg>
         <span class="copy-text">Copy</span>
         <span class="copied-text" style="display: none;">Copied!</span>
@@ -66,6 +69,12 @@ function initCollapsibleCodeBlocks() {
           // Show feedback
           const copyText = copyButton.querySelector('.copy-text');
           const copiedText = copyButton.querySelector('.copied-text');
+          const copyIcon = copyButton.querySelector('.copy-icon');
+          const checkmarkIcon = copyButton.querySelector('.checkmark-icon');
+          
+          // Change icon to checkmark
+          copyIcon.style.display = 'none';
+          checkmarkIcon.style.display = 'block';
           
           if (!isMobile) {
             // On desktop, show text feedback
@@ -76,9 +85,13 @@ function initCollapsibleCodeBlocks() {
           
           // Reset after 2 seconds
           setTimeout(() => {
+            // Change icon back to copy
+            checkmarkIcon.style.display = 'none';
+            copyIcon.style.display = 'block';
+            
             if (!isMobile) {
-              copyText.style.display = 'inline';
               copiedText.style.display = 'none';
+              copyText.style.display = 'inline';
             }
             copyButton.classList.remove('copied');
           }, 2000);
@@ -94,6 +107,12 @@ function initCollapsibleCodeBlocks() {
             document.execCommand('copy');
             const copyText = copyButton.querySelector('.copy-text');
             const copiedText = copyButton.querySelector('.copied-text');
+            const copyIcon = copyButton.querySelector('.copy-icon');
+            const checkmarkIcon = copyButton.querySelector('.checkmark-icon');
+            
+            // Change icon to checkmark
+            copyIcon.style.display = 'none';
+            checkmarkIcon.style.display = 'block';
             
             if (!isMobile) {
               // On desktop, show text feedback
@@ -102,6 +121,10 @@ function initCollapsibleCodeBlocks() {
             }
             copyButton.classList.add('copied');
             setTimeout(() => {
+              // Change icon back to copy
+              copyIcon.style.display = 'block';
+              checkmarkIcon.style.display = 'none';
+              
               if (!isMobile) {
                 copyText.style.display = 'inline';
                 copiedText.style.display = 'none';
