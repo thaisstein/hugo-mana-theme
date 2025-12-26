@@ -792,15 +792,15 @@
       
       // Create wrapper
       const wrapper = document.createElement('div');
-      wrapper.className = 'code-block-wrapper';
+      wrapper.className = 'code-block-wrapper collapsed';
       
       // Create toggle button
       const toggle = document.createElement('button');
       toggle.className = 'code-block-toggle';
       toggle.setAttribute('aria-label', 'Toggle code block');
-      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-expanded', 'false');
       toggle.innerHTML = `
-        <span>Collapse</span>
+        <span>Expand</span>
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
         </svg>
