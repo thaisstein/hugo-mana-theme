@@ -62,3 +62,8 @@
   {{ end }}
 {{ end }}
 
+{{ if site.Params.umami.websiteId }}
+<!-- Umami Analytics -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="{{ site.Params.umami.websiteId }}"></script>
+{{ end }}
+
