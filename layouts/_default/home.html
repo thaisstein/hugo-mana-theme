@@ -16,13 +16,13 @@
           </h1>
         {{ if site.Params.description }}
           <p class="hero-subtitle">&gt; {{ site.Params.description }}</p>
-          {{ else if site.Description }}
+        {{ else if site.Description }}
           <p class="hero-subtitle">&gt; {{ site.Description }}</p>
         {{ end }}
         {{ if site.Params.social }}
           <div class="hero-social">
           {{ partial "social-links.html" . }}
-        </div>
+          </div>
         {{ end }}
         </div>
         <div class="hero-image">
