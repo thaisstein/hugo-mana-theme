@@ -8,6 +8,7 @@ Futuristic hugo theme featuring clean aesthetics, and modern functionality and r
 - **Full-text search** with JSON index and keyboard navigation
 - **Syntax highlighting** with theme-aware Chroma (Catppuccin themes)
 - **Table of Contents** with active section highlighting
+- **Blockquotes and Alerts** with support for GitHub/Obsidian-style admonitions
 - **Dark/Light theme** with system preference detection and manual toggle
 - **Post filtering** by tags, year, and month
 - **Archive pages** with chronological organization
@@ -119,6 +120,66 @@ Enable table of contents for posts:
     endLevel = 6
     ordered = false
 ```
+
+### Blockquotes and Alerts
+
+The theme includes support for styled blockquotes and GitHub/Obsidian-style alerts (admonitions). To enable this feature, add the following configuration:
+
+```toml
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      # Enable block-level attributes for blockquotes
+      [markup.goldmark.parser.attribute]
+        block = true
+        title = true
+```
+
+#### Usage
+
+**Regular blockquote:**
+```markdown
+> This is a regular blockquote with some text.
+```
+
+**Simple alert/admonition:**
+```markdown
+> [!TIP]
+> This is a helpful tip for your readers.
+```
+
+**Collapsible alert with custom title:**
+```markdown
+> [!WARNING]+ Custom Warning Title
+> This is a collapsible warning that can be expanded/collapsed.
+```
+
+#### Supported Alert Types
+
+The theme supports the following alert types:
+- `NOTE` / `INFO` - Informational content
+- `TIP` - Helpful tips and suggestions
+- `IMPORTANT` - Important information
+- `WARNING` / `CAUTION` - Warnings and cautions
+- `SUCCESS` - Success messages
+- `QUESTION` - Questions or prompts
+- `DANGER` - Critical warnings
+- `BUG` - Bug reports or known issues
+- `EXAMPLE` - Example content
+
+#### Collapsible Alerts
+
+Use `+` or `-` after the alert type to make it collapsible:
+- `[!TIP]+` - Collapsed by default (click to expand)
+- `[!TIP]-` - Expanded by default (click to collapse)
+
+You can also add a custom title:
+```markdown
+> [!NOTE]+ My Custom Title
+> This alert has a custom title instead of the default "Note".
+```
+
+The syntax is compatible with GitHub Flavored Markdown, Obsidian, and Typora.
 
 ### Code Syntax Highlighting
 
