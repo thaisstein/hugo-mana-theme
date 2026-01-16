@@ -15,7 +15,7 @@
         {{ range .Data.Terms.ByCount }}
           <a href="{{ .Page.RelPermalink }}" class="tag-item">
             <div class="tag-chip-large">
-              <span class="tag-name">{{ .Page.Title }}</span>
+              <span class="tag-name">{{ .Page.Title | lower }}</span>
               <span class="tag-count-badge">{{ .Count }}</span>
             </div>
           </a>
