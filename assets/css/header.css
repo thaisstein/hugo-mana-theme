@@ -39,6 +39,10 @@
   box-sizing: border-box;
 }
 
+.header-content .hero-social {
+  padding-left: 4.25rem;
+}
+
 .header-logo {
   flex-shrink: 1;
   min-width: 0;
